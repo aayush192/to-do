@@ -6,8 +6,11 @@ console.log(myArray);
 console.log(myArray.pop());
 console.log(myArray);
 myArray.splice(1,2);*/
+function saveInStorage(){
+localStorage('array',JSON.stringify(array));
+}
 let totalHTML='';
-let myArray=[];
+let myArray=JSON.parse(localStorage.getItem('array'))||[];
 function render(){
     totalHTML='';
     
@@ -19,6 +22,7 @@ function render(){
         <div id='todoName'>
         ${name}</div>   <div id='todoDueDate'>${dueDate}</div>
         <button onclick="myArray.splice(${i},1);
+        saveInStorage();
         render();
         " id='buttonOne'>Delete</button>`;
         totalHTML+=val;
@@ -38,7 +42,7 @@ button.onclick=function(){
         name,
         dueDate
     });
-    
+    saveInStorage();
     todo.value='';
     todoDate.value='';
     render();
