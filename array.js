@@ -11,6 +11,7 @@ localStorage.setItem('array',JSON.stringify(myArray));
 }
 let totalHTML='';
 let myArray=JSON.parse(localStorage.getItem('array'))||[];
+render();
 function render(){
     totalHTML='';
     
