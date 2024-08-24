@@ -7,7 +7,7 @@ console.log(myArray.pop());
 console.log(myArray);
 myArray.splice(1,2);*/
 function saveInStorage(){
-localStorage('array',JSON.stringify(array));
+localStorage('array',JSON.stringify(myArray));
 }
 let totalHTML='';
 let myArray=JSON.parse(localStorage.getItem('array'))||[];
